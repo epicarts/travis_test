@@ -1,3 +1,8 @@
+#docker로 인한 root 권한 부여
+sudo: required
+
+services:
+  - docker
 language: python
 python:
   - "3.5"
