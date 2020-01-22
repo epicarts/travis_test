@@ -11,7 +11,7 @@ branches:
 
 before_install:
   - docker build -t test-django .
-  - docker run -d -p 80:8000 test-django /bin/sh -c "./manage.py runserver 0:8000"
+  - docker run -d -p 80:8000 test-django
   - docker ps -a
   - docker run test-django /bin/sh -c "./manage.py runserver 0:8000"
 
