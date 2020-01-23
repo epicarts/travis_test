@@ -3,8 +3,6 @@ sudo: required
 services:
   - docker
 
-#language: python
-
 branches:
   only:
     - master
@@ -19,8 +17,8 @@ before_install:
 # install: "pip install -r requirements.txt"
 
 # command to run tests
-script:
-  - ./manage.py runserver 0:8000
+# script:
+#   - ./manage.py runserver 0:8000
 
 
 # https://medium.com/mobileforgood/patterns-for-continuous-integration-with-docker-on-travis-ci-71857fff14c5

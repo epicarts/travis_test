@@ -8,6 +8,9 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 ADD . /app
 
+ENTRYPOINT ["./manage.py", "runserver", "0:8000"]
+
+
 # collect static files
 #RUN python manage.py collectstatic --noinput
 
@@ -26,4 +29,3 @@ ADD . /app
 # ENTRYPOINT ["echo", "Hello ENTRYPOINT", $name]
 # CMD ["CMD"]
 
-ENTRYPOINT ["./manage.py", "runserver", "0:8000"]
