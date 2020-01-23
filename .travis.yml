@@ -10,18 +10,13 @@ branches:
     - master
 
 before_install:
-  #빌드 까지는 성공
-  - chmod +x ./manage.py
+  # manage.py 권한 부여
   - docker build -t test-django .
   - docker run -d -p 80:8000 test-django
   - docker ps -a
-  - docker run test-django /bin/sh -c "./manage.py runserver 0:8000"
-
-python:
-  - "3.5"
 
 # command to install dependencies
-install: "pip install -r requirements.txt"
+# install: "pip install -r requirements.txt"
 
 # command to run tests
 script:
