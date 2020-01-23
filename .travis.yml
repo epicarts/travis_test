@@ -3,13 +3,15 @@ sudo: required
 services:
   - docker
 
-language: python
+#language: python
 
 branches:
   only:
     - master
 
 before_install:
+  #빌드 까지는 성공
+  - chmod +x ./manage.py
   - docker build -t test-django .
   - docker run -d -p 80:8000 test-django
   - docker ps -a
